@@ -1,0 +1,1 @@
+for /D %a in ("E:\Webtoon-Downloader-master\src\Locker_&_Opener\*.*") do xcopy /y /d C:\Users\localuser\Videos\your_thron.html "%a\"

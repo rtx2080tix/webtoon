@@ -1,0 +1,11 @@
+Get-ChildItem -Path .\ -Filter your_thron.html -Recurse | Select Fullname
+
+Get-ChildItem -Path .\ -Filter your_thron.html -Recurse | Select Fullname | % {$_ -replace "C:\\", "file:///C:/"} | % {$_ -replace "\\", "/"} | foreach {[regex]::match($_,'(?<=FullName=).*?(?=})').value} | Set-Clipboard
+
+.\ is  the currunt powershell path and it is the same as . But that does not matter because both are not needed.
+
+Get-ChildItem -Recurse -Filter your_thron.html | Select Fullname | % {$_ -replace "C:\\", "file:///C:/"} | % {$_ -replace "\\", "/"} | foreach {[regex]::match($_,'(?<=FullName=).*?(?=})').value} | Set-Clipboard
+
+the name of the file is after the filter argument
+Select is to extract data from Get-ChildItem
+Fullname return full file path

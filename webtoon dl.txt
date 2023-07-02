@@ -1,0 +1,1 @@
+python webtoon_downloader.py "https://www.webtoons.com/en/fantasy/blood-of-the-butterfly/list?title_no=3162" --seperate
